@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e6e6e6;
+}
+
+.header {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    background-color: #e0e0e0; /* Latar belakang abu-abu */
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* Menyambungkan header dengan kontainer */
+    margin-bottom: -1px; /* Menghilangkan gap di antara header dan kontainer */
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+.back-button {
+    background-color: #c0392b; /* Warna tombol kembali */
+    border: none;
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    color: white;
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Jarak kanan dari tombol */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #6d0505; /* Warna tombol saat hover */
+}
+
+.title-form{
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0; /* Menghilangkan margin default */
+    color: #6f6f6fa5; /* Warna font abu-abu muda */
+    
+}
+
+.card {
+    max-width: 100%;
+    padding: 20px; /* Menambah padding dalam kontainer */
+    border-radius:  0 0 8px 8px; /* Menyambungkan header dengan kontainer */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Menyembunyikan elemen yang keluar dari kontainer */
+    border: 1px solid #e0e0e0;
+    margin-top: -1px; /* Menghilangkan celah antara header dan kontainer */
+    margin-left: 4rem;
+    overflow: visible;
+
+    
+}
+.card2 {
+    margin-top: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #9f9f9f89;
+    border-radius: 10px;
+    width: calc(100% - 0px);
+    transition: box-shadow 0.3s ease, width 0.3s ease;
+}
+
+
+/* Styling for the form input fields */
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+/* Password input and show/hide button */
+.password-wrapper {
+    position: relative;
+}
+
+.btn-show-hide {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #6c757d;
+    transition: color 0.3s;
+}
+
+.btn-show-hide:hover {
+    color: #495057;
+}
+
+.form-control {
+    padding-right: 40px;
+    /* Space for the button */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-right: 5px
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+
+.btn-primary {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.5);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Margin for button group */
+.btn-group {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    th,
+    td {
+        padding: 10px;
+    }
+}

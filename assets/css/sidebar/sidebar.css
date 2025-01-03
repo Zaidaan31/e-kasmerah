@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --first-color: #2c1212;
+    --second-color: #9a2626;
+
+    --third-color: #140606;
+    --white-color: #fffefe;
+    --body-font: 'Quicksand', sans-serif;
+    --small-font-size: 0.875rem;
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --small-font-size: 0.938rem;
+    }
+}
+
+:root {
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color: var(--white-color);
+    transition: .5s;
+    z-index: 1200;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ulv {
+    color: var(--white-color);
+    margin-left: 6px;
+    font-weight: 500;
+    display: none;
+}
+
+.show .ulv {
+    display: block;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0.5rem 0;
+    /* Adjust the vertical spacing as needed */
+    transition: height 0.5s, margin 0.5s;
+}
+
+.dividerdr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 1rem 0;
+    /* Adjust the vertical spacing as needed */
+    transition: height 0.5s, margin 0.5s;
+}
+
+/* Extended divider when dropdown is active */
+.nav__item.active .divider {
+    height: 2px; /* Adjust height for extended effect */
+    margin: 0.5rem 0;
+}
+
+
+
+/*===== NAV =====*/
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: var(--first-color);
+    padding: 1.25rem .5rem 2rem;
+    transition: width 0.5s;
+    z-index: var(--z-fixed);
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.5s;
+}
+
+.nav__logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color);
+}
+
+.nav__logo-name {
+    color: var(--white-color);
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.show .nav__logo-name {
+    opacity: 1;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    margin-left: 0.5rem;
+    color: var(--white-color);
+    white-space: nowrap;
+}
+
+.nav__logo-icon {
+    margin-right: 1.2rem;
+}
+
+.nav__logo-text {
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+.nav__toggle {
+    position: absolute;
+    top: 1.10rem;
+    right: -.6rem;
+    width: 18px;
+    height: 18px;
+    background-color: var(--second-color);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: var(--first-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/*===== NAV LINK =====*/
+.nav__link {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    margin-bottom: 0.rem;
+    border-radius: .5rem;
+    color: var(--white-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.nav__link:hover {
+    color: var(--second-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.nav__icon {
+    font-size: 1.5rem;
+    margin-right: 1.2rem;
+}
+
+.nav__text {
+    font-weight: 700;
+    opacity: 0;
+    white-space: nowrap;
+    position: absolute;
+    left: 70px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--first-color);
+    pointer-events: none;
+    transition: opacity 0.3s, left 0.3s;
+}
+
+.nav__link:hover .nav__text,
+.show .nav__text {
+    opacity: 1;
+    left: 70px;
+}
+
+.l-navbar:not(.show) .nav__link:hover .nav__text {
+    opacity: 1;
+    left: 60px;
+}
+
+.show .nav__text {
+    position: static;
+    left: 0;
+}
+
+.show {
+    width: 250px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+}
+
+.active {
+    color: var(--second-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.expander {
+    padding-left: 11rem;
+    transition: padding-left 0.5s;
+}
+
+/* Dropdown styling */
+.nav__item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: linear-gradient(135deg, #5218133a, #57031063);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: var(--z-tooltip);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-family: var(--body-font);
+    transform: translateY(-20px);
+    
+}
+
+.l-navbar:not(.show) .dropdown-menu {
+    left: 42%;
+    
+}
+
+.nav__item.active .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-family: var(--body-font);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--second-color);
+    transform: scale(1.05);
+}
+
+.dropdown-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav__arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+.nav__item.active .nav__arrow {
+    transform: rotate(180deg);
+}
+
+/* Margin bawah tambahan saat dropdown aktif dan sidebar terbuka */
+.show .nav__item.active {
+    margin-bottom: 6rem;
+}
+
+/* Menghilangkan margin bawah saat sidebar tertutup */
+.l-navbar:not(.show) .nav__item.active {
+    margin-bottom: 0;
+}
+

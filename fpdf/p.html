@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Card Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .filter {
+            display: none;
+            width: 20rem;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <button id="showF" class="btn btn-primary">Filter</button>
+
+        <div id="cardContainer" class="filter">
+            <div class="form-group">
+                <label for="inputBox">Your Textbox:</label>
+                <input type="text" class="form-control" id="inputBox" placeholder="Type something...">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('showF').addEventListener('click', function() {
+            var card = document.getElementById('cardContainer');
+            if (card.style.display === 'none' || card.style.display === '') {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

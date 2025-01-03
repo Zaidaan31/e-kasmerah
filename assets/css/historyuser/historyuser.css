@@ -1,0 +1,431 @@
+:root {
+    --color1: linear-gradient(45deg, #ff7f7f, #ff4d4d); /* Gradien merah muda cerah untuk btn-1 (Send) */
+    --color2: linear-gradient(45deg, #ff3d00, #ff6f00); /* Gradien merah oranye cerah untuk btn-2 (Approval Section Head) */
+    --color3: linear-gradient(45deg, #ff5252, #ff1744); /* Gradien merah terang untuk btn-3 (Approval Cost Control) */
+    --color4: linear-gradient(45deg, #e57373, #ef5350); /* Gradien merah coral untuk btn-4 (Revise) */
+    --color5: linear-gradient(45deg, #e5aa73, #efa550); /* Gradien merah coral untuk btn-4 (Revise) */
+
+    --color1-dark: linear-gradient(45deg, #cc0000, #e53935); /* Gradien merah lebih gelap untuk btn-1 aktif */
+    --color2-dark: linear-gradient(45deg, #c62828, #d32f2f); /* Gradien merah lebih gelap untuk btn-2 aktif */
+    --color3-dark: linear-gradient(45deg, #b71c1c, #c62828); /* Gradien merah lebih gelap untuk btn-3 aktif */
+    --color4-dark: linear-gradient(45deg, #c62828, #d32f2f); /* Gradien merah lebih gelap untuk btn-4 aktif */
+    --color5-dark: linear-gradient(45deg, #c69428, #d39f2f); /* Gradien merah lebih gelap untuk btn-4 aktif */
+
+    --hover-color1: linear-gradient(45deg, #ff6f6f, #ff3d3d); /* Gradien hover merah cerah untuk btn-1 */
+    --hover-color2: linear-gradient(45deg, #ff4d00, #ff8c00); /* Gradien hover merah oranye cerah untuk btn-2 */
+    --hover-color3: linear-gradient(45deg, #ff1744, #d50032); /* Gradien hover merah terang untuk btn-3 */
+    --hover-color4: linear-gradient(45deg, #ef5350, #c62828); /* Gradien hover merah coral untuk btn-4 */
+    --hover-color5: linear-gradient(45deg, #efaa50, #c6a128); /* Gradien hover merah coral untuk btn-4 */
+
+ color: #f5f3f3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e6e6e6;
+}
+
+.header {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    background-color: #e0e0e0; /* Latar belakang abu-abu */
+    padding: 10px;
+    border-radius: 8px 8px 0 0; /* Menyambungkan header dengan kontainer */
+    margin-bottom: -1px; /* Menghilangkan gap di antara header dan kontainer */
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+.back-button {
+    background-color: #c0392b; /* Warna tombol kembali */
+    border: none;
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    color: white;
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Jarak kanan dari tombol */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #6d0505; /* Warna tombol saat hover */
+}
+
+.title-form{
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0; /* Menghilangkan margin default */
+    color: #6f6f6fa5; /* Warna font abu-abu muda */
+    
+}
+
+.card {
+    max-width: 100%;
+    padding: 20px; /* Menambah padding dalam kontainer */
+    border-radius:  0 0 8px 8px; /* Menyambungkan header dengan kontainer */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Menyembunyikan elemen yang keluar dari kontainer */
+    border: 1px solid #e0e0e0;
+    margin-top: -1px; /* Menghilangkan celah antara header dan kontainer */
+    margin-left: 4rem;
+    overflow: visible;
+
+    
+}
+.card2 {
+    margin-top: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #9f9f9f89;
+    border-radius: 10px;
+    width: calc(100% - 0px);
+    transition: box-shadow 0.3s ease, width 0.3s ease;
+}
+
+div.dt-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+
+.nav-btn {
+    border: 2px solid transparent;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+    width: 130px;
+    height: 80px;
+    margin: 20p;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    
+}
+
+.nav-btn:hover {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-btn:hover::before {
+    opacity: 1;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    background: rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+    z-index: -1;
+    opacity: 0;
+}
+
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #f4f1f1;
+    transition: width 0.3s, left 0.3s;
+    transform: translateX(-0%);
+}
+
+.nav-btn:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-btn i {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.nav-btn.active {
+    color: white;
+    background-color: transparent; 
+}
+
+#btn-1.active {
+    background: var(--color1-dark) !important; /* Gradien lebih gelap untuk btn-1 aktif */
+}
+#btn-2.active {
+    background: var(--color2-dark) !important; /* Gradien lebih gelap untuk btn-2 aktif */
+}
+#btn-3.active {
+    background: var(--color3-dark) !important; /* Gradien lebih gelap untuk btn-3 aktif */
+}
+#btn-4.active {
+    background: var(--color4-dark) !important; /* Gradien lebih gelap untuk btn-5 aktif */
+}
+#btn-5.active {
+    background: var(--color5-dark) !important; /* Gradien lebih gelap untuk btn-5 aktif */
+}
+
+#btn-1 {
+    border-radius: 30px 0 0 0;
+    transform: skew(-20deg);
+    background: var(--color1); /* Gradien cerah untuk btn-1 (Send) */
+    margin-left: 20px;
+}
+
+#btn-2 {
+    transform: skew(-20deg);
+    background: var(--color2); /* Gradien cerah untuk btn-2 (Approval Section Head) */
+}
+
+#btn-3 {
+    transform: skew(-20deg);
+    background: var(--color3); /* Gradien cerah untuk btn-3 (Approval Cost Control) */
+}
+
+
+#btn-4 {
+    border-radius: 0 0 30px 0 ;
+    transform: skew(-20deg);
+    background: var(--color4); /* Gradien cerah untuk btn-5 (Revise) */
+}
+
+#btn-5 {
+    border-radius: 10px ;
+    background: var(--color5); /* Gradien cerah untuk btn-5 (Revise) */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#btn-1 span, #btn-2 span, #btn-3 span, #btn-4 span {
+    display: block;
+    transform: skew(20deg);
+}
+
+#btn-1:hover {
+    background: var(--hover-color1); /* Gradien hover untuk btn-1 */
+}
+
+#btn-2:hover {
+    background: var(--hover-color2); /* Gradien hover untuk btn-2 */
+}
+
+#btn-3:hover {
+    background: var(--hover-color3); /* Gradien hover untuk btn-3 */
+}
+
+
+#btn-4:hover {
+    background: var(--hover-color4); /* Gradien hover untuk btn-5 */
+}
+
+#btn-5:hover {
+    background: var(--hover-color5); /* Gradien hover untuk btn-5 */
+}
+
+.nav-btn h4 {
+    display: inline-block;
+    transform: skew(20deg);
+}
+
+
+ /* Untuk kontainer tombol navigasi */
+ .nav-buttons-container {
+    overflow-x: auto; /* Scrollbar horizontal jika tombol melebihi lebar kontainer */
+    white-space: nowrap; /* Mencegah tombol berpindah baris */
+    padding: 10px 0; /* Menambahkan padding atas dan bawah */
+   
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 5px; /* Jarak antar tombol */
+}
+
+.nav-btn {
+    flex: 0 0 auto; /* Tombol tidak akan menyusut */
+    min-width: 100px; /* Lebar minimum tombol */
+    white-space: normal; /* Membolehkan pembungkusan teks pada tombol */
+    overflow: hidden; /* Mencegah konten keluar dari tombol */
+}
+
+.nav-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Untuk tabel */
+.table-container {
+    overflow-x: auto; /* Tambahkan scrollbar horizontal jika tabel melebihi lebar */
+    width: 100%; /* Pastikan lebar container sesuai dengan lebar halaman */
+    box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar total */
+}
+
+.dataTables_filter {
+    margin-bottom: 20px; /* Atur sesuai keinginan */
+}
+
+.dataTables_filter input[type="search"] {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dataTables_filter input[type="search"]:focus {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dataTables_filter i.fa-search {
+    font-size: 14px; /* Atur ukuran ikon sesuai keinginan */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+.dataTables_length {
+    margin-bottom: 20px; /* Atur sesuai keinginan */
+}
+
+.dataTables_length label {
+    display: flex;
+    align-items: center;
+}
+
+.dataTables_length select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.dataTables_length select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dataTables_length i.fa-list {
+    font-size: 14px; /* Atur ukuran ikon sesuai keinginan */
+}
+
+
+.title-filter {
+    width: 100%;
+    height: 25px;
+    background-color: #e7e7e76a;
+    color: grey !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.filter {
+    display: none;
+    padding: 20px;
+    margin-top: 7rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 16%;
+    left: 2.5%;
+    width: 24rem;
+    z-index: 9999;
+    background-color: white;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.form-row .col {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-row .col:last-child {
+    margin-right: 0;
+}
+
+.btn-f {
+    background: #b3b3b36a;
+    font-weight: 600;
+    color: #282828;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-f:hover {
+    background: #939393;
+}
+
+.btn-r {
+    background: #b3b3b36a;
+    font-weight: 600;
+    color: #282828;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-r:hover {
+    background: #939393;
+}
+
+.btn-a {
+    background: #00aaff;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 108px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-a:hover {
+    background: #00537d;
+}
+
+@media  (max-width: 768px) {
+    .card{
+        width: 22rem;
+        margin-left: 10px;
+        margin-right: 10px;
+     
+    }
+
+   
+}
+
+
